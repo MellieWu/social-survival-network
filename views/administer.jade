@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  include navigator
+  header#top.header
+    .text-vertical-center
+        h1 Administer User Profile
+        br
+
+        table(style='width:60%; margin:auto')
+          each user in result
+            tr
+              td
+                a(href='/admin/'+user.username).btn.btn-dark.btn-lg.home-items=user.username
+              td
+            
+        

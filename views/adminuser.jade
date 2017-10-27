@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  include navigator
+  header#top.header
+    .text-vertical-center
+      h1  Admin
+      br
+
+      table(style='width:20%; margin:auto')
+        tr
+          td 
+            a.btn.btn-dark.btn-lg.home-items username
+          td
+            a.btn.btn-dark.btn-lg.home-items= result.username
+          td
+        tr
+          td 
+            a.btn.btn-dark.btn-lg.home-items password
+          td
+            a.btn.btn-dark.btn-lg.home-items= result.password
+        tr
+          td 
+            a.btn.btn-dark.btn-lg.home-items level
+          td
+            a.btn.btn-dark.btn-lg.home-items= result.level
+        tr
+          td 
+            a.btn.btn-dark.btn-lg.home-items account status
+          td
+            a.btn.btn-dark.btn-lg.home-items= result.accountstatus
+        br
+
+      form#groupcategory.form-horizontal.multiple-form-group(style='width:60%; margin:auto')
+        .form-group
+          label(for='status') Account Status
+            select#status
+              option active
+              option inactive
+
+        .form-group
+          label(for='status') Level
+            select#level
+              option Citizen
+              option Coordinator
+              option Monitor
+              option Administrator
+
+        .form-group
+          label Username
+          input#username(type="text", name="title")
+
+        .form-group
+          label Password
+          input#password(type="text", name="title")
+
+        .form-group
+          .col-xs-offset-4.col-sm-offset-3.col-xs-7
+            button.btn.btn-primary(type='submit' name='create') Submit
+
+  script(src='http://code.jquery.com/jquery-1.11.1.js')
+  script(src='/socket.io/socket.io.js')
+  script(src='/js/adminuser.js')
+
